@@ -1,33 +1,32 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import React, { Component } from "react";
+import CoinTable from "./Component/table";
+import data from "./data/names.json";
+import "./styles/table.css";
 
-export default function App() {
-  const [equipo, setEquipo] = useState([]);
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: data,
+    };
+    this.sortBy = this.sortBy.bind(this);
+  }
+  sortBy(user) {
+    console.log(user);
+    this.setState({
+      users: data.sort((a, b) => a < b),
+    });
+  }
 
-  useEffect(() => {
-    //console.log("useEffect");
-    obtenerDatos();
-  }, []);
-
-  //Obtener los datos por medio de una API
-  const obtenerDatos = async () => {
-    const data = await fetch("https://jsonplaceholder.typicode.com/users");
-    const users = await data.json();
-    //console.log(users);
-    setEquipo(users);
-  };
-
-  return (
-    <div>
-      <h1>Tabla de datos</h1>
-      <tr>
-        {equipo.map((equipos) => (
-          <td key={equipos.id}>
-            {" "}
-            {equipos.name}- {equipos.email}{" "}
-          </td>
-        ))}
-      </tr>
-    </div>
-  );
+  render() {
+    return (
+      <div className="container">
+        <div>
+          <h1 className="title">Tabla de datos</h1>
+          <CoinTable data={this.state.users} sortBy={this.sortBy} />
+        </div>
+      </div>
+    );
+  }
 }
+export default App;
