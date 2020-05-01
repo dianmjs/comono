@@ -1,7 +1,17 @@
 .title {
   text-align: center;
 }
-.table {
+
+/*tr,
+th {
+  border-collapse: separate;
+  border: 1px solid #000;
+}*/
+
+th,
+td,
+thead {
+  border: double black;
   border-collapse: separate;
 }
 .button {
@@ -10,4 +20,11 @@
   left: 0;
   text-align: center;
   margin: auto;
+}
+@media (max-width: 500px) {
+  .button {
+    width: 50%;
+    font-size: 10px;
+    padding: 12px;
+  }
 }

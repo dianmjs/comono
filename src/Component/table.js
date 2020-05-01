@@ -4,8 +4,8 @@ import "../styles/table.css";
 
 export default function CoinTable(props) {
   return (
-    <div className="container col-sm-6 table justify-content-md-center">
-      <Table striped bordered hover>
+    <div className="container col-sm-6  justify-content-md-center table-responsive-sm">
+      <Table>
         <thead>
           <tr>
             <th>Name</th>
@@ -29,14 +29,22 @@ export default function CoinTable(props) {
         <Button
           className=" btn-responsive "
           variant="primary"
-          onClick={() => props.sortBy(props.data)}
+          onClick={() => props.sortName(props.data)}
         >
           Sort by name
         </Button>{" "}
-        <Button className="btn-responsive" variant="secondary">
+        <Button
+          className="btn-responsive"
+          variant="secondary"
+          onClick={() => props.sortBy(props.data)}
+        >
           Sort by age
         </Button>{" "}
-        <Button className="btn-responsive" variant="success">
+        <Button
+          className="btn-responsive"
+          variant="success"
+          onClick={() => props.sortSport(props.data)}
+        >
           Sort by sport
         </Button>{" "}
       </div>
