@@ -10,19 +10,12 @@ class App extends Component {
     this.state = {
       users: data,
     };
-    this.sortBy = this.sortBy.bind(this);
+    this.sortAge = this.sortAge.bind(this);
     this.sortName = this.sortName.bind(this);
     this.sortSport = this.sortSport.bind(this);
   }
-  sortBy(list) {
-    console.log(list);
-    this.setState({
-      users: this.state.users.sort((a, b) =>
-        a.age > b.age ? 1 : a.age < b.age ? -1 : 0
-      ),
-    });
-  }
 
+  //Método que ordena el nombre
   sortName(list) {
     this.setState({
       users: this.state.users.sort((a, b) =>
@@ -31,6 +24,16 @@ class App extends Component {
     });
   }
 
+  //Método que ordena la edad
+  sortAge(list) {
+    this.setState({
+      users: this.state.users.sort((a, b) =>
+        a.age > b.age ? 1 : a.age < b.age ? -1 : 0
+      ),
+    });
+  }
+
+  //Método que ordena el deporte
   sortSport(list) {
     this.setState({
       users: this.state.users.sort((a, b) =>
@@ -39,6 +42,7 @@ class App extends Component {
     });
   }
 
+  //Muestro los componentes en la pantalla
   render() {
     return (
       <Fragment>
@@ -46,7 +50,7 @@ class App extends Component {
         <div>
           <CoinTable
             data={this.state.users}
-            sortBy={this.sortBy}
+            sortAge={this.sortAge}
             sortName={this.sortName}
             sortSport={this.sortSport}
           />

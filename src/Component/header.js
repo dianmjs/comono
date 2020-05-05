@@ -6,7 +6,7 @@ export default function Header() {
     <Fragment>
       <Navbar expand="lg" variant="dark" bg="info">
         <Container>
-          <Navbar.Brand href="#">Tabla de Datos</Navbar.Brand>
+          <Navbar.Brand href="#">Data Table</Navbar.Brand>
         </Container>
       </Navbar>
     </Fragment>

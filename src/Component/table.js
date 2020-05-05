@@ -4,7 +4,7 @@ import { Table, Button } from "react-bootstrap";
 
 export default function CoinTable(props) {
   return (
-    <div className="container col-sm-6 table justify-content-md-center table-responsive-sm">
+    <div className="container col-sm-6 table table-responsive-sm">
       <Table>
         <thead>
           <tr>
@@ -28,7 +28,7 @@ export default function CoinTable(props) {
       <div className="button ">
         <Button
           className=" btn-responsive "
-          variant="primary"
+          variant="danger"
           onClick={() => props.sortName(props.data)}
         >
           Sort by name
@@ -36,7 +36,7 @@ export default function CoinTable(props) {
         <Button
           className="btn-responsive"
           variant="secondary"
-          onClick={() => props.sortBy(props.data)}
+          onClick={() => props.sortAge(props.data)}
         >
           Sort by age
         </Button>{" "}
