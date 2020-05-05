@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import CoinTable from "./Component/table";
 import data from "./data/names.json";
 import "./styles/table.css";
+import Header from "./Component/header";
 
 class App extends Component {
   constructor(props) {
@@ -40,9 +41,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <Fragment>
+        <Header />
         <div>
-          <h1 className="title">Tabla de datos</h1>
           <CoinTable
             data={this.state.users}
             sortBy={this.sortBy}
@@ -50,7 +51,7 @@ class App extends Component {
             sortSport={this.sortSport}
           />
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

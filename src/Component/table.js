@@ -1,10 +1,10 @@
 import React from "react";
-import { Table, Button } from "react-bootstrap";
 import "../styles/table.css";
+import { Table, Button } from "react-bootstrap";
 
 export default function CoinTable(props) {
   return (
-    <div className="container col-sm-6  justify-content-md-center table-responsive-sm">
+    <div className="container col-sm-6 table justify-content-md-center table-responsive-sm">
       <Table>
         <thead>
           <tr>
