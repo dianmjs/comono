@@ -29,21 +29,21 @@ export default function CoinTable(props) {
         <Button
           className=" btn-responsive "
           variant="danger"
-          onClick={() => props.sortName(props.data)}
+          onClick={() => props.sortList("name")}
         >
           Sort by name
         </Button>{" "}
         <Button
           className="btn-responsive"
           variant="secondary"
-          onClick={() => props.sortAge(props.data)}
+          onClick={() => props.sortList("age")}
         >
           Sort by age
         </Button>{" "}
         <Button
           className="btn-responsive"
           variant="success"
-          onClick={() => props.sortSport(props.data)}
+          onClick={() => props.sortList("sport")}
         >
           Sort by sport
         </Button>{" "}
